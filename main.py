@@ -108,7 +108,6 @@ def create_audio_from_text(texts, file_name="audio"):
         with open(f"audio/{file_name}_{i}.mp3", "wb") as f:
             f.write(decoded_voice)
 
-# Example usage
 def main():
     text = "Everything that you thought had meaning: every hope, dream, or moment of happiness. None of it matters as you lie bleeding out on the battlefield. None of it changes what a speeding rock does to a body, we all die. But does that mean our lives are meaningless? Does that mean that there was no point in our being born? Would you say that of our slain comrades? What about their lives? Were they meaningless?... They were not! Their memory serves as an example to us all! The courageous fallen! The anguished fallen! Their lives have meaning because we the living refuse to forget them! And as we ride to certain death, we trust our successors to do the same for us! Because my soldiers do not buckle or yield when faced with the cruelty of this world! My soldiers push forward! My soldiers scream out! My soldiers RAAAAAGE!"
     delete_folder_contents("audio")
@@ -116,8 +115,7 @@ def main():
     create_audio_from_text(text_chunks)
     mp3_files = get_mp3_files("audio")
     concatenate_audios(mp3_files, "output_audio.wav")
-    transcription = transcribe_audio("output_audio.wav")
-    # print(transcription)
+    transcribe_audio("output_audio.wav")
 
 if __name__ == "__main__":
     main()
